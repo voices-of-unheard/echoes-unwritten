@@ -1,4 +1,8 @@
 function toggleMenu() {
-  const nav = document.getElementById("navLinks");
-  nav.classList.toggle("show");
+  const menu = document.getElementById("sideMenu");
+  if (menu.style.left === "0px") {
+    menu.style.left = "-250px";
+  } else {
+    menu.style.left = "0px";
+  }
 }
