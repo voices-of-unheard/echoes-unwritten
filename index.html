@@ -1,12 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Echoes Unwritten</title>
-
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -14,36 +10,24 @@
   <!-- NAVIGATION -->
   <nav class="navbar">
     <div class="logo">Echoes Unwritten</div>
-
-    <div class="menu-icon" onclick="toggleMenu()">
-      ☰
-    </div>
-
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#">Stories</a></li>
-      <li><a href="#">Join Us</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
   </nav>
+
+  <!-- SIDE MENU -->
+  <div id="sideMenu" class="side-menu">
+    <a href="#">Stories</a>
+    <a href="#">Join the Movement</a>
+    <a href="#">Contact</a>
+  </div>
 
   <!-- HERO SECTION -->
   <section class="hero">
-    <h1>Echoes Unwritten</h1>
-
-    <p class="tagline top">
-      Stories that never found a voice.
-    </p>
-
-    <p class="tagline middle">
-      Every untold story deserves to be heard.
-    </p>
-
-    <p class="tagline bottom">
-      Anonymous or known — your truth matters.
-    </p>
+    <h1 class="tagline fade">Your story deserves a voice.</h1>
+    <h1 class="tagline fade delay">Some stories are never spoken.</h1>
+    <h1 class="tagline fade delay2">Until now.</h1>
   </section>
 
-  <!-- JS -->
   <script src="script.js"></script>
 </body>
 </html>
+
