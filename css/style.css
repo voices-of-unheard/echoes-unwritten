@@ -1,3 +1,25 @@
+/* ===============================
+   GLOBAL THEME VARIABLES
+================================ */
+
+:root {
+  /* Backgrounds */
+  --bg-main: #0b0c10;
+  --bg-secondary: #14161f;
+
+  /* Text */
+  --text-main: #ffffff;
+  --text-muted: #e0e0e0;
+  --text-soft: #cfcfcf;
+
+  /* Accents */
+  --accent-primary: #7c7cff;
+  --accent-secondary: #ff7a7a;
+
+  /* Borders / Glass */
+  --border-soft: rgba(255,255,255,0.12);
+}
+
 * {
   margin: 0;
   padding: 0;
