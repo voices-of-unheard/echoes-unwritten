@@ -2,32 +2,81 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Echoes Unwritten</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Voices of the Unheard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- NAVIGATION -->
-  <nav class="navbar">
-    <div class="logo">Echoes Unwritten</div>
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
-  </nav>
-
-  <!-- SIDE MENU -->
-  <div id="sideMenu" class="side-menu">
-    <a href="#">Stories</a>
-    <a href="#">Join the Movement</a>
-    <a href="#">Contact</a>
-  </div>
-
-  <!-- HERO SECTION -->
+  <!-- ================= HERO SECTION ================= -->
   <section class="hero">
-    <h1 class="tagline fade">Your story deserves a voice.</h1>
-    <h1 class="tagline fade delay">Some stories are never spoken.</h1>
-    <h1 class="tagline fade delay2">Until now.</h1>
+    <div class="hero-content">
+      <h1>Voices of the Unheard</h1>
+
+      <p>
+        A place where stories live —  
+        spoken or silent, named or anonymous.  
+        <span>Your truth matters.</span>
+      </p>
+
+      <div class="hero-buttons">
+        <button class="primary">Read Stories</button>
+        <button class="secondary">Share Your Story</button>
+      </div>
+    </div>
   </section>
 
-  <script src="script.js"></script>
+  <!-- ================= STORY SLIDER ================= -->
+  <section class="story-slider">
+    <h2>Stories That Matter</h2>
+
+    <div class="slider-container">
+      <div class="slider-track">
+
+        <!-- Story Card 1 -->
+        <div class="story-card">
+          <span class="tag">Scam</span>
+          <h3>They Took My Savings</h3>
+          <p>
+            I trusted them because they spoke confidently.
+            That confidence cost me everything...
+          </p>
+          <small>Anonymous</small>
+        </div>
+
+        <!-- Story Card 2 -->
+        <div class="story-card">
+          <span class="tag">Life</span>
+          <h3>Silent Battles</h3>
+          <p>
+            Smiling outside doesn’t mean peace inside.
+            Some wars are fought quietly...
+          </p>
+          <small>Anonymous</small>
+        </div>
+
+        <!-- Story Card 3 -->
+        <div class="story-card">
+          <span class="tag">Society</span>
+          <h3>Judged Without Knowing Me</h3>
+          <p>
+            People decide your worth before
+            they hear your story...
+          </p>
+          <small>With Identity</small>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- JS -->
+  <script src="js/slider.js"></script>
+
 </body>
 </html>
-
