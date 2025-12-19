@@ -8,19 +8,24 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="theme-dark">
 
-  <!-- THEME SWITCHER -->
-  <div class="theme-switcher">
-    <button onclick="setTheme('theme-dark')">🌑</button>
-    <button onclick="setTheme('theme-midnight')">🌌</button>
-    <button onclick="setTheme('theme-light')">☀️</button>
+<body data-theme="dark">
+
+  <!-- SETTINGS MENU -->
+  <div class="settings">
+    <button class="settings-btn">⚙️</button>
+
+    <div class="settings-panel">
+      <p>Theme</p>
+      <button onclick="setTheme('dark')">Dark</button>
+      <button onclick="setTheme('midnight')">Midnight</button>
+      <button onclick="setTheme('light')">Light</button>
+    </div>
   </div>
 
-  <!-- HERO SECTION -->
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
       <h1>Echoes, Unwritten.</h1>
@@ -41,49 +46,46 @@
   <section class="story-section">
     <h2>Stories That Matter</h2>
 
-    <div class="slider-container">
-      <div class="slider-track">
+    <div class="slider-wrapper">
+      <button class="arrow left" onclick="slideLeft()">‹</button>
 
-        <!-- CARD 1 -->
-        <div class="story-card">
-          <span class="tag">Scam</span>
-          <h3>They Took My Savings</h3>
-          <p>I trusted them because they spoke confidently. That confidence cost me everything.</p>
-          <small>Anonymous</small>
+      <div class="slider-container" id="slider">
+        <div class="slider-track">
+
+          <!-- CARDS -->
+          <div class="story-card">
+            <span class="tag">Scam</span>
+            <h3>They Took My Savings</h3>
+            <p>I trusted them because they spoke confidently.</p>
+            <small>Anonymous</small>
+          </div>
+
+          <div class="story-card">
+            <span class="tag">Life</span>
+            <h3>Silent Battles</h3>
+            <p>Smiling outside doesn’t mean peace inside.</p>
+            <small>Anonymous</small>
+          </div>
+
+          <div class="story-card">
+            <span class="tag">Society</span>
+            <h3>Judged Without Knowing Me</h3>
+            <p>People decide your worth before hearing you.</p>
+            <small>With Identity</small>
+          </div>
+
+          <!-- DUPLICATE FOR LOOP -->
+          <div class="story-card">
+            <span class="tag">Scam</span>
+            <h3>They Took My Savings</h3>
+            <p>I trusted them because they spoke confidently.</p>
+            <small>Anonymous</small>
+          </div>
+
         </div>
-
-        <!-- CARD 2 -->
-        <div class="story-card">
-          <span class="tag">Life</span>
-          <h3>Silent Battles</h3>
-          <p>Smiling outside doesn’t mean peace inside. Some wars are fought quietly.</p>
-          <small>Anonymous</small>
-        </div>
-
-        <!-- CARD 3 -->
-        <div class="story-card">
-          <span class="tag">Society</span>
-          <h3>Judged Without Knowing Me</h3>
-          <p>People decide your worth before they ever hear your story.</p>
-          <small>With Identity</small>
-        </div>
-
-        <!-- DUPLICATE FOR SMOOTH LOOP -->
-        <div class="story-card">
-          <span class="tag">Scam</span>
-          <h3>They Took My Savings</h3>
-          <p>I trusted them because they spoke confidently. That confidence cost me everything.</p>
-          <small>Anonymous</small>
-        </div>
-
-        <div class="story-card">
-          <span class="tag">Life</span>
-          <h3>Silent Battles</h3>
-          <p>Smiling outside doesn’t mean peace inside. Some wars are fought quietly.</p>
-          <small>Anonymous</small>
-        </div>
-
       </div>
+
+      <button class="arrow right" onclick="slideRight()">›</button>
     </div>
   </section>
 
