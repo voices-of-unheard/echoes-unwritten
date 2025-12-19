@@ -6,14 +6,21 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: #0c0c0f;
-  color: #ffffff;
+  background: radial-gradient(
+    circle at top,
+    #12142a,
+    var(--bg-main)
+  );
+  color: var(--text-main);
 }
+
 
 /* ============ HERO SECTION ============ */
 .hero {
   height: 100vh;
-  background: linear-gradient(135deg, #050509, #101028);
+  background:
+    radial-gradient(circle at center, rgba(124,124,255,0.12), transparent 60%),
+    linear-gradient(135deg, #050509, #101028);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,10 +28,19 @@ body {
   padding: 20px;
 }
 
+
 .hero-content h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 3.5rem;
+  font-size: 3.8rem;
   margin-bottom: 20px;
+  background: linear-gradient(
+    90deg,
+    #ffffff,
+    var(--accent-primary),
+    #ffffff
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero-content p {
@@ -53,23 +69,28 @@ body {
 }
 
 .hero-buttons .primary {
-  background: #ffffff;
+  background: linear-gradient(
+    135deg,
+    var(--accent-primary),
+    #9a9aff
+  );
   color: #000;
+  box-shadow: 0 0 20px rgba(124,124,255,0.4);
 }
 
 .hero-buttons .primary:hover {
-  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(124,124,255,0.7);
 }
 
 .hero-buttons .secondary {
-  background: transparent;
-  color: #ffffff;
-  border: 1px solid #ffffff;
+  background: var(--bg-glass);
+  color: var(--text-main);
+  border: 1px solid var(--border-soft);
+  backdrop-filter: blur(10px);
 }
 
 .hero-buttons .secondary:hover {
-  background: #ffffff;
-  color: #000;
+  background: rgba(255,255,255,0.12);
 }
 
 /* ============ STORY SLIDER ============ */
@@ -95,16 +116,35 @@ body {
 
 .story-card {
   min-width: 280px;
-  background: #14141f;
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  background: linear-gradient(
+    180deg,
+    var(--bg-secondary),
+    #0f1020
+  );
+  padding: 22px;
+  border-radius: 18px;
+  border: 1px solid var(--border-soft);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.story-card .tag {
-  font-size: 0.75rem;
-  color: #aaa;
+.story-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
+
+
+.story-card .tag {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+.tag.scam { background: rgba(255,122,122,0.15); color: #ff7a7a; }
+.tag.life { background: rgba(124,124,255,0.15); color: #7c7cff; }
+.tag.society { background: rgba(94,234,212,0.15); color: #5eead4; }
+.tag.love { background: rgba(245,201,122,0.2); color: #f5c97a; }
+
 
 .story-card h3 {
   margin: 10px 0;
