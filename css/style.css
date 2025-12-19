@@ -20,6 +20,34 @@
   --border-soft: rgba(255,255,255,0.12);
 }
 
+/* ===============================
+   THEME VARIATIONS
+================================ */
+
+body.midnight {
+  --bg-main: #0b0c10;
+  --bg-secondary: #14161f;
+  --text-main: #ffffff;
+  --text-muted: #d6d6ff;
+  --accent-primary: #7c7cff;
+}
+
+body.dark {
+  --bg-main: #000000;
+  --bg-secondary: #111111;
+  --text-main: #ffffff;
+  --text-muted: #f0f0f0;
+  --accent-primary: #ffffff;
+}
+
+body.light {
+  --bg-main: #faf7f2;
+  --bg-secondary: #ffffff;
+  --text-main: #111111;
+  --text-muted: #333333;
+  --accent-primary: #7c4dff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -28,13 +56,11 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: radial-gradient(
-    circle at top,
-    #12142a,
-    var(--bg-main)
-  );
+  background: var(--bg-main);
   color: var(--text-main);
+  transition: background 0.4s ease, color 0.4s ease;
 }
+
 
 
 /* ============ HERO SECTION ============ */
@@ -65,10 +91,16 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-.hero-content p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #cfcfcf;
+.hero-content p,
+.story-card p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+.hero-content h1,
+.story-card h3 {
+  color: var(--text-main);
+  text-shadow: 0 0 10px rgba(255,255,255,0.18);
 }
 
 .hero-content span {
