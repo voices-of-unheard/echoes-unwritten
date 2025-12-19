@@ -1,6 +1,4 @@
-/* ===============================
-   GLOBAL RESET
-================================ */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -8,33 +6,67 @@
 }
 
 /* ===============================
-   BASE THEME (READABILITY FIRST)
+   THEMES (SAFE & READABLE)
 ================================ */
-:root {
+
+/* DEFAULT DARK */
+body.theme-dark {
   --bg-main: #0f1115;
   --bg-card: #1a1d24;
-
   --text-main: #ffffff;
   --text-para: #f1f1f1;
   --text-muted: #cfcfcf;
-
   --accent: #8b8bff;
   --border: rgba(255,255,255,0.15);
 }
 
-/* ===============================
-   BODY
-================================ */
+/* MIDNIGHT */
+body.theme-midnight {
+  --bg-main: #080a12;
+  --bg-card: #121525;
+  --text-main: #ffffff;
+  --text-para: #eaeaff;
+  --text-muted: #c5c8ff;
+  --accent: #7aa2ff;
+  --border: rgba(255,255,255,0.18);
+}
+
+/* LIGHT */
+body.theme-light {
+  --bg-main: #f5f6fa;
+  --bg-card: #ffffff;
+  --text-main: #111111;
+  --text-para: #222222;
+  --text-muted: #444444;
+  --accent: #5a5aff;
+  --border: rgba(0,0,0,0.1);
+}
+
+/* BODY */
 body {
   font-family: 'Inter', sans-serif;
   background-color: var(--bg-main);
   color: var(--text-main);
-  -webkit-font-smoothing: antialiased;
+  transition: background 0.3s, color 0.3s;
 }
 
-/* ===============================
-   HERO SECTION
-================================ */
+/* THEME SWITCHER */
+.theme-switcher {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.theme-switcher button {
+  margin: 5px;
+  padding: 8px 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+/* HERO */
 .hero {
   height: 100vh;
   display: flex;
@@ -48,15 +80,12 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: 3.6rem;
   margin-bottom: 20px;
-  color: var(--text-main);
 }
 
 .hero-content p {
   font-size: 1.15rem;
   line-height: 2;
   color: var(--text-para);
-  max-width: 700px;
-  margin: auto;
 }
 
 .hero-buttons {
@@ -69,23 +98,24 @@ body {
   border-radius: 30px;
   font-size: 1rem;
   cursor: pointer;
+}
+
+.primary {
+  background-color: var(--accent);
+  color: #000;
   border: none;
 }
 
-.hero-buttons .primary {
-  background-color: var(--accent);
-  color: #000;
-}
-
-.hero-buttons .secondary {
-  background-color: transparent;
+.secondary {
+  background: transparent;
   color: var(--text-main);
   border: 1px solid var(--border);
 }
 
 /* ===============================
-   STORY SECTION
+   MOVING STORY SLIDER (FIXED)
 ================================ */
+
 .story-section {
   padding: 60px 20px;
 }
@@ -94,54 +124,56 @@ body {
   text-align: center;
   font-family: 'Playfair Display', serif;
   margin-bottom: 40px;
-  font-size: 2rem;
 }
 
-.slider {
+.slider-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider-track {
   display: flex;
   gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
+  animation: slide 25s linear infinite;
 }
 
-/* ===============================
-   STORY CARD
-================================ */
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* STORY CARD */
 .story-card {
+  min-width: 300px;
   background-color: var(--bg-card);
   padding: 24px;
   border-radius: 14px;
   border: 1px solid var(--border);
-  width: 300px;
 }
 
 .story-card h3 {
-  font-size: 1.2rem;
   margin: 12px 0;
-  color: var(--text-main);
 }
 
 .story-card p {
-  font-size: 1rem;
-  line-height: 1.8;
   color: var(--text-para);
+  line-height: 1.8;
 }
 
 .story-card small {
-  display: block;
-  margin-top: 14px;
-  font-size: 0.8rem;
   color: var(--text-muted);
 }
 
-/* ===============================
-   TAG
-================================ */
+/* TAG */
 .tag {
   display: inline-block;
   font-size: 0.75rem;
   padding: 4px 10px;
   border-radius: 20px;
   background-color: rgba(139,139,255,0.2);
-  color: #dedeff;
+  color: var(--accent);
 }
