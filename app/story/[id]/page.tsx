@@ -2,6 +2,7 @@ import StoryViewTracker from "@/components/story/StoryViewTracker";
 import { supabase } from "@/lib/supabase";
 import { Story } from "@/types/story";
 import { notFound } from "next/navigation";
+import LikeButton from "@/components/story/LikeButton";
 
 interface PageProps {
   params: {
