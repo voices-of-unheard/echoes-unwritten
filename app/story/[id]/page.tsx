@@ -1,3 +1,4 @@
+import StoryViewTracker from "@/components/story/StoryViewTracker";
 import { supabase } from "@/lib/supabase";
 import { Story } from "@/types/story";
 import { notFound } from "next/navigation";
@@ -43,6 +44,9 @@ export default async function StoryPage({ params }: PageProps) {
       <div className="prose prose-invert max-w-none leading-relaxed">
         {story.content.split("\n").map((para: string, idx: number) => (
           <p key={idx}>{para}</p>
+      <div className="h-[50vh]" />
+
+  <StoryViewTracker storyId={story.id} />
         ))}
       </div>
     </article>
