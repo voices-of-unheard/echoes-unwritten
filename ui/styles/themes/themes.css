@@ -1,0 +1,18 @@
+.theme-parchment {
+  --bg: #f4efe9;
+  --text: #2b2b2b;
+}
+
+.theme-ink {
+  --bg: #1e1e1e;
+  --text: #f1f1f1;
+}
+
+.theme-faded {
+  --bg: #ede6dc;
+  --text: #3a3a3a;
+}
+.theme-ancient {
+  --bg: #f9f5e3;
+  --text: #4b3b2b;
+}
